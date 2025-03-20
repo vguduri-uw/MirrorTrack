@@ -1,0 +1,33 @@
+Wisc ID:
+GitHub ID:
+
+[ ] correct WB9 Canvas Assignment submission on time [none]: 
+[ ] completed 09-workbook.txt in the for_student folder correctly [none]: 
+[ ] (at least one) texture you made by painting (described in the readme) [none]: 
+[ ] (at least one) texture you found on the web (described in readme with proper attribution) [none]: 
+[ ] (at least one) a texture you made by taking a picture (described in the readme) [none]: 
+[ ] identifyable as a real object [09-01-01]: 
+[ ] texture makes it look like a real object [09-01-01]: 
+[ ] an appropriate scene (objects, lighting, …) [09-02-01]: 
+[ ] clear use of mat prop map [09-02-01]: 
+[ ] material map use explained [09-02-01]: 
+[ ] appropriate scene (objects and lighting) [09-03-01]: 
+[ ] bump map object looks “bump mappy” [09-03-01]: 
+[ ] confirm bump map is a bump map (1 channel) [09-03-01]: 
+[ ] normal map object looks “normal mappy” [09-03-01]: 
+[ ] confirm normal map is a normal map (3 channels) [09-03-01]: 
+[ ] explaination of how we can see the effects [09-03-01]: 
+[ ] both 4-1 and 4-2 look like a skybox [09-04-01]: 
+[ ] 4-1 is a fake sky box (get close to edge) [09-04-01]: 
+[ ] there is a reflective object in the scene that shows the environment map [09-05-01]: 
+[ ] environment map matches environment [09-05-01]: 
+[ ] explanation of why env map is appropriate [09-05-01]: 
+[ ] there are shadows [09-06-01]: 
+[ ] there are shadows of one object onto another object [09-06-01]: 
+[ ] there is an object reflecting the environment (checks for code using current framework) [09-07-01]: 
+[ ] the reflections show the scene (not just the background) [09-07-01]: 
+[ ] you can see moving objects in the reflection [09-07-01]: 
+[ ] not the same as the example (checks for code using current framework) [09-07-01]: 
+[ ] combine bump/normal with color map, with explanation [09-03-01]: 
+[ ] combine env map with other map types and explain [09-05-01]: 
+[ ] video screen showing what a camera moving in the scene sees [09-07-01]: 
