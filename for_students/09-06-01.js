@@ -22,6 +22,7 @@ function spinY(obj, speed = 1) {
 function test() {
   let parentOfCanvas = document.getElementById("div1");
   let world = new GrWorld({ where: parentOfCanvas });
+  world.renderer.shadowMap.enabled = true;
 
   /**
    * Some Stuff in the world to cast and receive shadows
@@ -34,6 +35,7 @@ function test() {
   tmesh.rotateX(Math.PI / 2);
   tmesh.scale.set(0.5, 0.5, 0.25);
   tmesh.translateX(-2);
+  tmesh.castShadow = true; //me
   gr.add(tmesh);
   gr.translateY(3);
   let highobj = new GrObject("high obj", gr);
@@ -42,21 +44,28 @@ function test() {
 
   // some low objects to be shadowed - although these
   // should cast shadows on the ground plane
-  world.add(spinY(new Simple.GrCube({ x: -3, y: 1 })));
-  world.add(spinY(new Simple.GrTorusKnot({ x: 3, y: 1, size: 0.5 })));
+  let cube = new Simple.GrCube({ x: -3, y: 1 });
+  cube.objects[0].castShadow = true; 
+  cube.objects[0].receiveShadow = true; 
+  world.add(spinY(cube));//changed these to cast and receive shadows
 
-  /**
-   * Turn on Shadows - this is the student's job in the assignment
-   * Remember to:
-   * - make a spotlight and turn on its shadows
-   * - have objects (including the ground plane) cast / receive shadows
-   * - turn on shadows in the renderer
-   *
-   * it's about 15 lines (with a recursive "loop" to enable shadows for all objects)
-   * but you can also just turn things on as you make objects
-   */
+  let torusKnot = new Simple.GrTorusKnot({ x: 3, y: 1, size: 0.5 });
+  torusKnot.objects[0].castShadow = true; 
+  torusKnot.objects[0].receiveShadow = true; 
+  world.add(spinY(torusKnot));
 
+  //couldn't figure out the receive shadows through the parent
+  let groundGeom = new T.PlaneGeometry(10, 10);
+  let groundMat = new T.MeshStandardMaterial({ color: "darkgreen" });
+  let ground = new T.Mesh(groundGeom, groundMat);
+  ground.rotateX(-Math.PI / 2);
+  ground.receiveShadow = true; 
+  world.scene.add(ground);
+  let spotlight = new T.SpotLight("white", 100);
+  spotlight.position.set(0, 10, 0);
+  spotlight.castShadow = true;
+  spotlight.angle = Math.PI / 4;
+  world.scene.add(spotlight);
   world.go();
 }
 test();
-

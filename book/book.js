@@ -10,7 +10,7 @@ let fcg = new T.TextureLoader().load("./fcg-texture.jpg");
 fcg.flipY = false;
 
 // size of the book in inches
-const bookWidth = 8  / 12;
+const bookWidth = 8/ 12;
 const bookLength = 9.5/ 12;
 const bookHeight = 1.5/ 12; 
 const overhang = .03;
