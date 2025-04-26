@@ -87,8 +87,6 @@ class CombinedMapSphere extends GrObject {
     }
 }
 
-
-
 let parentOfCanvas = document.getElementById("div1");
 let world = new GrWorld({ where: parentOfCanvas });
 world.add(new NormalMapSphere());
