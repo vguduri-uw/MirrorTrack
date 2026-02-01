@@ -233,7 +233,18 @@ function test() {
   
   // Add reflective spheres
   const sphereGeo = new T.SphereGeometry(1, 32, 32);
-  const sphere1 = new T.Mesh(sphereGeo, new T.MeshStandardMaterial({ color: "white", metalness: 1, roughness: 0, envMap: rt1.texture }));
+  const textureLoader = new T.TextureLoader();
+  const bumpMap = textureLoader.load('bumpmap.png');
+
+  const sphere1 = new T.Mesh(sphereGeo, new T.MeshStandardMaterial({ 
+    color: "white", 
+    metalness: 1, 
+    roughness: 0, 
+    envMap: rt1.texture,
+    bumpMap: bumpMap,
+    bumpScale: 0.7
+  }));
+
   sphere1.position.set(-1.5, 1, 0);
   sphere1.castShadow = true;
   sphere1.receiveShadow = true;
